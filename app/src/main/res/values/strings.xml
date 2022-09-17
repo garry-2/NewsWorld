@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">News App 2</string>
+    <string name="aboutUsString1">Developed By,</string>
+    <string name="aboutUsString2">Gaurav Wani</string>
+    <string name="aboutUsString3">Third Year Student at GCOEJ</string>
 </resources>

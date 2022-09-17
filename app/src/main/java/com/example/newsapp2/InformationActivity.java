@@ -1,6 +1,7 @@
 package com.example.newsapp2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,14 +15,18 @@ import com.squareup.picasso.Picasso;
 public class InformationActivity extends AppCompatActivity {
     TextView content_textView,content_titleView;
     ImageView content_imageView;
+    Toolbar toolbar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
+        toolbar2 = findViewById(R.id.toolbar2);
+
         content_textView = findViewById(R.id.content_textView);
         content_titleView = findViewById(R.id.content_title);
         content_imageView = findViewById(R.id.content_image);
+
 
         Log.d("Gaurav","This is second Activity");
 

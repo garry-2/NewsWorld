@@ -1,5 +1,6 @@
 package com.example.newsapp2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     ArrayList<model> arr;
     SelectListener listener;
 
+
     public CustomAdapter(Context context, ArrayList<model> arr, SelectListener listener) {
         this.context = context;
         this.arr = arr;
@@ -45,6 +47,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         Log.d("Gaurav","Image Url : "+ arr.get(position).Image_url);
         if(arr.get(position).Image_url != null){
             Picasso.get().load(arr.get(position).Image_url).into(holder.imageView);
+        }
+        else{
+
         }
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

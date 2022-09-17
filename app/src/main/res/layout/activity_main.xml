@@ -6,11 +6,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="#292727"
+
     android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0B0000"
+            android:elevation="100dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NewsWorld"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:fontFamily="@font/alata"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="4dp"/>
+
+            
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     
 
     <HorizontalScrollView
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,6 +58,7 @@
                 android:background="@drawable/custom_buttons_2"
                 android:layout_margin="4dp"
                 android:padding="5dp"
+
                 android:text="All"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -61,8 +95,14 @@
                 android:padding="2dp"
                 android:text="Business"/>
 
-
-
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_buttons"
+                android:layout_margin="4dp"
+                android:id="@+id/technology_btn"
+                android:padding="2dp"
+                android:text="Technology"/>
 
 
         </LinearLayout>
@@ -72,7 +112,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/recycleView"/>
+        android:id="@+id/recycleView"
+        android:layout_marginTop="20dp"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_gravity="center"

@@ -7,11 +7,8 @@
     app:cardCornerRadius="15dp"
     app:cardUseCompatPadding="true"
     android:layout_gravity="center"
-    android:foregroundGravity="center"
-    app:layout_anchorGravity="center"
     android:layout_marginHorizontal="10dp"
     android:id="@+id/cardView"
-
     >
 
     <LinearLayout
@@ -27,13 +24,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/layout_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:padding="5dp"
                 android:text="Title"
-                android:id="@+id/layout_title"
                 android:textColor="#0C0B0B"
-                android:padding="5dp"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -42,21 +39,22 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#0C0B0B"
+                android:fontFamily="@font/alata"
                 android:text="source id"
                 android:padding="5dp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageLinearLayout"
+            android:visibility="visible">
 
             <ImageView
+                android:id="@+id/layout_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:id="@+id/layout_image"
                 />
         </LinearLayout>
 
