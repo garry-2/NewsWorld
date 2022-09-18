@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#292727"
-
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -31,16 +31,8 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="4dp"/>
 
-            
-
-
         </androidx.appcompat.widget.Toolbar>
-
-
     </com.google.android.material.appbar.AppBarLayout>
-
-
-    
 
     <HorizontalScrollView
         android:layout_marginTop="30dp"
@@ -58,7 +50,7 @@
                 android:background="@drawable/custom_buttons_2"
                 android:layout_margin="4dp"
                 android:padding="5dp"
-
+                android:textColor="@color/black"
                 android:text="All"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -68,6 +60,7 @@
                 android:background="@drawable/custom_buttons"
                 android:layout_margin="4dp"
                 android:padding="5dp"
+                android:textColor="@color/black"
                 android:text="Entertainment"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -77,6 +70,7 @@
                 android:id="@+id/sports_btn"
                 android:layout_margin="4dp"
                 android:padding="2dp"
+                android:textColor="@color/black"
                 android:text="Sports"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
@@ -85,6 +79,7 @@
                 android:layout_margin="4dp"
                 android:id="@+id/top_btn"
                 android:padding="2dp"
+                android:textColor="@color/black"
                 android:text="Top"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
@@ -93,6 +88,7 @@
                 android:layout_margin="4dp"
                 android:id="@+id/business_btn"
                 android:padding="2dp"
+                android:textColor="@color/black"
                 android:text="Business"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -102,6 +98,7 @@
                 android:layout_margin="4dp"
                 android:id="@+id/technology_btn"
                 android:padding="2dp"
+                android:textColor="@color/black"
                 android:text="Technology"/>
 
 
@@ -122,6 +119,7 @@
         android:id="@+id/no_result_animation"
         app:lottie_rawRes="@raw/no_result_animation"
         app:lottie_autoPlay="true"
+        app:lottie_repeatCount="300"
         />
 
 </LinearLayout>

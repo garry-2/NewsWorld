@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
     Toolbar toolbar;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
 
         //for all news --> oncreate automatic call
         extractallnews();
+
 
         //all news
         allNews_btn.setOnClickListener(new View.OnClickListener() {
@@ -119,25 +121,27 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             @Override
             public void onResponse(JSONObject response) {
                 lottieAnimationView.setVisibility(View.GONE);
-                try {
-                    Log.d("Gaurav", "Respones : " + response);
-                    JSONArray jsonArray = response.getJSONArray("results");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject obj = jsonArray.getJSONObject(i);
-                        if (obj.getString("language").equals("english")) {
-                            String title = obj.getString("title");
-                            String source_id = obj.getString("source_id");
-                            String Image_url = obj.getString("image_url");
-                            String content = obj.getString("content");
-                            Log.d("Gaurav", "url : " + Image_url);
-                            arr.add(new model(title, source_id, Image_url, content));
-                        }
 
+                    try {
+                        Log.d("Gaurav", "Respones : " + response);
+                        JSONArray jsonArray = response.getJSONArray("results");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject obj = jsonArray.getJSONObject(i);
+                            if (obj.getString("language").equals("english")) {
+                                String title = obj.getString("title");
+                                String source_id = obj.getString("source_id");
+                                String Image_url = obj.getString("image_url");
+                                String content = obj.getString("content");
+                                Log.d("Gaurav", "url : " + Image_url);
+                                arr.add(new model(title, source_id, Image_url, content));
+                            }
+
+                        }
+                    } catch (JSONException e) {
+                        Log.d("Gaurav", "error is catched !");
+                        e.printStackTrace();
                     }
-                } catch (JSONException e) {
-                    Log.d("Gaurav", "error is catched !");
-                    e.printStackTrace();
-                }
+
 
                 CustomAdapter adapter = new CustomAdapter(getApplicationContext(), arr, MainActivity.this);
                 recyclerView.setAdapter(adapter);
@@ -147,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                lottieAnimationView.setVisibility(View.VISIBLE);
 
             }
         });
@@ -160,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
 
     //Entertainment
     private void extractEntertainmentNews() {
-        lottieAnimationView.setVisibility(View.GONE);
+
         ArrayList<model> enter_arr = new ArrayList<>();  // for entertainment category
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -169,13 +173,15 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                 Log.d("Gaurav", "clicked entertainment !");
                 try {
                     JSONArray jsonArray = response.getJSONArray("results");
+                    int flag = 0;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         JSONArray category = obj.getJSONArray("category");
                         String cat = (String) category.get(0);
 
                         if (cat.equals("entertainment")) {
-
+                            flag = 1;
+                            lottieAnimationView.setVisibility(View.GONE);
                             String title = obj.getString("title");
                             String source_id = obj.getString("source_id");
                             String Image_url = obj.getString("image_url");
@@ -183,6 +189,9 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                             enter_arr.add(new model(title, source_id, Image_url, content));
                         }
 
+                    }
+                    if(flag == 0){
+                        lottieAnimationView.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     Log.d("Gaurav", "error is catched !");
@@ -196,7 +205,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("Gaurav", "Response Error  !");
-                lottieAnimationView.setVisibility(View.VISIBLE);
 
             }
         });
@@ -216,6 +224,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                     Log.d("Gaurav", "clicked entertainment !");
                     try {
                         JSONArray jsonArray = response.getJSONArray("results");
+                        int flag = 0;
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject obj = jsonArray.getJSONObject(i);
                             JSONArray category = obj.getJSONArray("category");
@@ -223,12 +232,18 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                             String cat = (String) category.get(0);
 
                             if (cat.equals("sports")) {
+                                flag = 1;
+                                lottieAnimationView.setVisibility(View.GONE);
                                 String title = obj.getString("title");
                                 String source_id = obj.getString("source_id");
                                 String Image_url = obj.getString("image_url");
                                 String content = obj.getString("content");
                                 sports_arr.add(new model(title, source_id, Image_url, content));
                             }
+
+                        }
+                        if(flag == 0){
+                            lottieAnimationView.setVisibility(View.VISIBLE);
                         }
                     } catch (JSONException e) {
                         Log.d("Gaurav", "error is catched !");
@@ -265,18 +280,25 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                 lottieAnimationView.setVisibility(View.GONE);
                 try {
                     JSONArray jsonArray = response.getJSONArray("results");
+                    int flag = 0;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         JSONArray category = obj.getJSONArray("category");
                         String cat = (String) category.get(0);
 
                         if (cat.equals("top")) {
+                            flag = 1;
+                            lottieAnimationView.setVisibility(View.GONE);
                             String title = obj.getString("title");
                             String source_id = obj.getString("source_id");
                             String Image_url = obj.getString("image_url");
                             String content = obj.getString("content");
                             top_arr.add(new model(title, source_id, Image_url, content));
                         }
+
+                    }
+                    if(flag == 0){
+                        lottieAnimationView.setVisibility(View.GONE);
                     }
                 } catch (JSONException e) {
                     Log.d("Gaurav", "error is catched !");
@@ -306,6 +328,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                 try {
 
                     JSONArray jsonArray = response.getJSONArray("results");
+                    int flag = 0;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         JSONArray category = obj.getJSONArray("category");
@@ -313,15 +336,17 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
                         String cat = (String) category.get(0);
 
                         if (cat.equals("business")) {
-
+                            flag = 1;
+                            lottieAnimationView.setVisibility(View.GONE);
                             String title = obj.getString("title");
                             String source_id = obj.getString("source_id");
                             String Image_url = obj.getString("image_url");
                             String content = obj.getString("content");
                             business_arr.add(new model(title, source_id, Image_url, content));
                         }
-
-
+                    }
+                    if(flag == 0){
+                        lottieAnimationView.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     Log.d("Gaurav", "error is catched !");
@@ -343,7 +368,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
     }
 
     public void ExtractTechnologyNews() {
-
         ArrayList<model> technology_arr = new ArrayList<>(); // top category
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -351,21 +375,30 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             public void onResponse(JSONObject response) {
 
                 Log.d("Gaurav", "Technology Department !");
-                lottieAnimationView.setVisibility(View.GONE);
+
                 try {
                     JSONArray jsonArray = response.getJSONArray("results");
+                    int flag = 0;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         JSONArray category = obj.getJSONArray("category");
                         String cat = (String) category.get(0);
 
                         if (cat.equals("technology")) {
+                            flag = 1;
+                            lottieAnimationView.setVisibility(View.GONE);
                             String title = obj.getString("title");
                             String source_id = obj.getString("source_id");
                             String Image_url = obj.getString("image_url");
                             String content = obj.getString("content");
                             technology_arr.add(new model(title, source_id, Image_url, content));
                         }
+                        else{
+
+                        }
+                    }
+                    if(flag == 0){
+                        lottieAnimationView.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     Log.d("Gaurav", "error is catched !");
@@ -379,7 +412,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("Gaurav", "Response Error  !");
-                lottieAnimationView.setVisibility(View.VISIBLE);
+
             }
         });
         requestQueue.add(jsonObjectRequest);

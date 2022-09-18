@@ -48,9 +48,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         if(arr.get(position).Image_url != null){
             Picasso.get().load(arr.get(position).Image_url).into(holder.imageView);
         }
-        else{
 
-        }
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
