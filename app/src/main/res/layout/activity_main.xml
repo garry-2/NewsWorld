@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#292727"
+    android:background="@drawable/gradient_color_3"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -29,6 +29,7 @@
                 android:textSize="30dp"
                 android:fontFamily="@font/alata"
                 android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="4dp"/>
 
         </androidx.appcompat.widget.Toolbar>

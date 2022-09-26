@@ -9,6 +9,7 @@
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/custom_buttons_2.xml" value="0.1415" />
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/gradient_color_1.xml" value="0.1415" />
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/gradient_color_2.xml" value="0.1415" />
+        <entry key="..\:/NewsApp2/app/src/main/res/drawable/gradient_color_3.xml" value="0.1385" />
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.1415" />
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/NewsApp2/app/src/main/res/drawable/ic_newsworldicon.xml" value="0.1385" />
@@ -16,7 +17,7 @@
         <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_about_us.xml" value="0.1" />
         <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_aboutus.xml" value="0.16485507246376813" />
         <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_information.xml" value="0.17074275362318841" />
-        <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/NewsApp2/app/src/main/res/layout/activity_main2.xml" value="0.16485507246376813" />
         <entry key="..\:/NewsApp2/app/src/main/res/layout/recycleview_layout.xml" value="0.1" />
         <entry key="..\:/NewsApp2/app/src/main/res/menu/opt_menu_1.xml" value="0.18125" />

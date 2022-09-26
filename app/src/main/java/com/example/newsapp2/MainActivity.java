@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         allNews_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 extractallnews();
             }
         });
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         entertainment_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 extractEntertainmentNews();
             }
         });
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         sports_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ExtractSportNews();
             }
         });
@@ -91,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         top_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ExtractTopNews();
             }
         });
@@ -98,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         business_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ExtractBusinessNews();
             }
         });
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         technology_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ExtractTechnologyNews();
             }
         });
